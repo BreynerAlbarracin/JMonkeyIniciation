@@ -101,7 +101,7 @@ public class Main extends SimpleApplication implements ActionListener, AnimEvent
         geom.addControl(rb);
 
         //Configuramos el player
-        CollisionShape playerCollition = new CapsuleCollisionShape(0, 0, 0);
+        CollisionShape playerCollition = new CapsuleCollisionShape(3f, 6f, 1);
         player = new CharacterControl(playerCollition, 50f);
         player.setJumpSpeed(20);
         player.setFallSpeed(30);
@@ -221,7 +221,6 @@ public class Main extends SimpleApplication implements ActionListener, AnimEvent
         CollisionShape mayaOto = CollisionShapeFactory.createDynamicMeshShape(oto);
         rigidOto = new RigidBodyControl(mayaOto, 1f);
         oto.addControl(rigidOto);
-        oto.addControl(player);
 
         phisics.getPhysicsSpace().add(rigidOto);
         rootNode.attachChild(oto);
